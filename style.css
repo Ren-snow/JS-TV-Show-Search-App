@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 0 10%;
+  margin: 0;
+}
+.contents-wrapper {
+  max-width: 860px;
+  min-height: 100vh;
+  margin: 0 auto 40px;
+}
+.form-results {
+  margin: 0 auto;
+  padding: 30px 30px 40px;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+.search-form {
+  margin-bottom: 20px;
+}
+.search-input {
+  font-size: 16px;
+}
+.search-button {
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  transition: .3s;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.search-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.movies-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 5%;
+}
+.movie-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.movie-name {
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  flex-grow:1;
+}
+.movie-image {
+  width: 100%;
+  aspect-ratio: 210 / 295;
+} 
+.movie-image img {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .search-input {
+    width: 60%;
+  }
+  .movies-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 32px;
+  }
+  .movie-name {
+    font-size: 24px;
+  }
+}
+
+

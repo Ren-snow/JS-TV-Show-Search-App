@@ -6,7 +6,7 @@ form.addEventListener("submit", async (e) => {
     if (document.querySelector(".movie-wrapper")) {
         function removeMovieWrapper(className) {
             const elements = document.querySelectorAll(`.${className}`);
-            elements.forEach(element => element.remove());
+            elements.forEach((element) => element.remove());
         }
         removeMovieWrapper("movie-wrapper");
     }
@@ -27,12 +27,14 @@ const createMovieWrapper = (results) => {
         const movieImage = document.createElement("div");
         movieImage.classList.add("movie-image", `movie-image${i}`);
         movieWrapper.append(movieName, movieImage);
-
-        const img = document.createElement("IMG");
-        img.src = result.show.image.medium;
-        movieImage.append(img);
+        if (result.show.image) {
+            const img = document.createElement("IMG");
+            img.src = result.show.image.medium;
+            movieImage.append(img);
+        } 
+        const name = result.show.name;
+        movieName.innerText = name;
         moviesWrapper.append(movieWrapper);
         i += 1;
     }
 };
-
